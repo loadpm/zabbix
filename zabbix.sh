@@ -60,12 +60,12 @@ if [ ! -f /etc/nginx/dhparams.pem ]; then
 #configs
 curl https://raw.githubusercontent.com/loadpm/dor/master/www.conf > /etc/php-fpm.d/www.conf
 curl https://raw.githubusercontent.com/SS88UK/VestaCP-Server-Installer/master/CentOS7/nginx.conf > /etc/nginx/nginx.conf
-curl https://raw.githubusercontent.com/loadpm/zabbix/master/www.conf > /etc/nginx/conf.d/zabbix.conf
+curl https://raw.githubusercontent.com/loadpm/zabbix/main/nginx_zabbix.conf > /etc/nginx/conf.d/zabbix.conf
 
 #enable/start service
-systectl enable nginx php-fpm mysqld
+systemctl enable nginx php-fpm mysqld
 systemctl start nginx php-fpm mysqld
 
 #disable firewalld
-systectl stop firewalld
-systectl disable firewalld
+systemctl stop firewalld
+systemctl disable firewalld
